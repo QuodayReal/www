@@ -194,4 +194,16 @@
       @apply dark:text-slate-400;
     }
   }
+
+	.quote-card {
+		@apply flex flex-col gap-2 p-8 rounded-xl bg-accent-50 dark:bg-accent-600/20;
+
+		& > h3 {
+			@apply text-xl font-semibold text-accent-900 dark:text-accent-400;
+		}
+
+		& > p {
+			@apply text-accent-900 dark:text-accent-400;
+		}
+	}
 }

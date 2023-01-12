@@ -7,9 +7,11 @@ interface NavIconProps {
   icon: ReactElement;
   title: string;
   label?: string;
+	onClick?: () => void;
+	target?: string;
 }
 
-function NavIcon({ href, icon, title, label = '' }: NavIconProps) {
+function NavIcon({ href, icon, title, label = '', onClick, target = '_blank' }: NavIconProps) {
   return (
     <a
       href={href}
@@ -28,8 +30,9 @@ function NavIcon({ href, icon, title, label = '' }: NavIconProps) {
       )}
       aria-label={`My ${title} profile`}
       title={`My ${title} profile`}
-      target="_blank"
+      target={target}
       rel="noreferrer"
+			onClick={onClick}
     >
       <span
         className={clsx('flex h-9 w-9 items-center justify-center rounded-xl')}

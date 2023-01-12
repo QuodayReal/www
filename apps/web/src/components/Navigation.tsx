@@ -1,11 +1,8 @@
 import clsx from "clsx";
 
 import {
-  GitHubIcon,
-  HeartIcon,
   LanguageIcon,
   TwitterIcon,
-  TypeScriptIcon,
 } from "@/components/Icons";
 import NavIcon from "@/components/navigations/NavIcon";
 import NavIconTheme from "@/components/navigations/NavIconTheme";
@@ -25,6 +22,12 @@ const workLinks = [
 
 function Navbar() {
   const isScrolled = useOnScroll(0);
+
+	const chageAccent = () => {
+		const accents = ['blue', 'red', 'green', 'yellow', 'black'];
+		const accent = accents[Math.floor(Math.random() * accents.length)];
+		document.documentElement.setAttribute('data-accent', accent)
+	}
 
   return (
     <header
@@ -47,19 +50,19 @@ function Navbar() {
             "md:px-4"
           )}
         >
-          <nav className={clsx("flex", "md:gap-2")} data-accent="slate">
+          <nav className={clsx("flex", "md:gap-2")}>
             <NavLogo href="/" title="Home" />
             <ul className={clsx("flex items-center", "md:gap-1")}>
-              <li>
+              <li data-accent="slate">
                 <NavLink title="Home" href="/projects" />
               </li>
-              <li>
+              <li data-accent="slate">
                 <NavLink title="About" href="/blog" />
               </li>
-              <li className={clsx("lg:hidden")} data-accent="green">
+              <li className={clsx("lg:hidden")}>
                 <NavLinkDropdown title="Links" items={workLinks} />
               </li>
-              <li className={clsx("hidden lg:block")} data-accent="green">
+              <li className={clsx("hidden lg:block")}>
                 <NavLinkExpanded title="Links" items={workLinks} />
               </li>
             </ul>
@@ -83,9 +86,11 @@ function Navbar() {
             </li>
             <li className={clsx("")}>
               <NavIcon
-                href="https://lang.com"
+                href="#"
+								target=""
                 icon={<LanguageIcon className={clsx("h-5 w-5")} />}
                 title="Lang"
+								onClick={chageAccent}
               />
             </li>
             <li className={clsx("mr-2")}>
