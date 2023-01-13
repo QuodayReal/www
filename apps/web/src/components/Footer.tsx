@@ -112,7 +112,7 @@ function FooterDescription() {
         Quote Focused
       </div>
       <p className={clsx("mb-4 font-normal leading-relaxed")}>
-				<strong>Quoday</strong> brings you a new quote every day. It@apos;s a
+				<strong>Quoday</strong> brings you a new quote every day. It&apos;s a
 				collection of quotes from various sources. You can also search for
 				quotes and save them to your personal collection.
       </p>

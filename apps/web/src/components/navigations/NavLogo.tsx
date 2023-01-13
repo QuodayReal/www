@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { NextJsIcon } from "../Icons";
+import { NextJsIcon, SparklesIcon } from "../Icons";
 
 // import Logo from '@/components/Logo';
 
@@ -21,7 +21,7 @@ function NavLogo({ href, title }: NavLogoProps) {
       aria-label={title}
     >
       {/* <Logo active={isActive} /> */}
-      <NextJsIcon className={clsx("h-5 w-5")} />
+      <SparklesIcon className={clsx("h-5 w-5")} />
     </Link>
   );
 }

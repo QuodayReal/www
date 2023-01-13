@@ -100,7 +100,7 @@
     @apply dark:text-accent-400 dark:font-semibold;
 
     &:hover,
-    &[aria-expanded='true'] {
+    &[aria-expanded="true"] {
       @apply text-accent-700;
       @apply dark:text-accent-300;
     }
@@ -195,15 +195,31 @@
     }
   }
 
-	.quote-card {
-		@apply flex flex-col gap-2 p-8 rounded-xl bg-accent-50 dark:bg-accent-600/20;
+  .quote-card {
+    @apply rounded-xl bg-accent-50 dark:bg-accent-600/20;
+		@apply flex flex-col p-8 justify-between;
 
-		& > h3 {
-			@apply text-xl font-semibold text-accent-900 dark:text-accent-400;
+
+		&__content {
+			@apply flex flex-col gap-2;
 		}
 
-		& > p {
-			@apply text-accent-900 dark:text-accent-400;
-		}
-	}
+    h3 {
+      @apply text-xl font-semibold text-accent-900 dark:text-accent-400;
+    }
+
+    p {
+      @apply text-accent-900 dark:text-accent-400;
+    }
+
+    &__actions {
+      @apply w-full space-x-6 flex mt-4;
+			@apply justify-between lg:justify-end;
+
+      svg {
+        @apply h-6 w-6 cursor-pointer;
+				@apply transition-all;
+      }
+    }
+  }
 }
